@@ -16,7 +16,7 @@
         public int? PublisherId { get; set; }
         public Publisher Publisher { get; set; }
 
-        public List<Book_Authors> Book_Authors { get; set; }
+        public List<Book_author> Book_Authors { get; set; }
 
     }
 }
