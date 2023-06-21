@@ -1,36 +1,86 @@
-﻿@using BookWebApp.ViewModels;
-@model IEnumerable<BookVM>
+﻿@model IEnumerable<BookWebApp.ViewModels.BookWithAuthorsVM>
 
-<h1>Books List</h1>
+@{
+    ViewData["Title"] = "Index";
+}
 
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">@Html.DisplayNameFor(model=>model.Title)</th>
-            <th scope="col">@Html.DisplayNameFor(model=>model.Description)</th>
-            <th scope="col">@Html.DisplayNameFor(model=>model.IsRead)</th>
-            <th scope="col">@Html.DisplayNameFor(model=>model.DateRead)</th>
-            <th scope="col">@Html.DisplayNameFor(model=>model.Rate)</th>
-            <th scope="col">@Html.DisplayNameFor(model=>model.Genre)</th>
-            <th scope="col">@Html.DisplayNameFor(model=>model.CoverUrl)</th>
-           
-           
+          
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsRead)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateRead)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoverUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.publisherName)
+            </th>
+            <th> @Html.DisplayNameFor(model => model.AuthorsName)</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var item in Model)
-        {
-          <tr>
-            <td>@item.Title</td>
-            <td>@item.Description</td>
-            <td>@item.IsRead</td>
-            <td>@item.DateRead</td>
-            <td>@item.Rate</td>
-            <td>@item.Genre</td>
-            <td>@item.CoverUrl</td>
-          </tr>
-        }
-
-      
+@foreach (var item in Model) {
+        <tr>
+              
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsRead)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRead)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoverUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.publisherName)
+            </td>
+            <td>
+                    @foreach(var auth in item.AuthorsName)
+                    {
+                         @auth <span>,</span>
+                    }
+                
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
     </tbody>
 </table>
