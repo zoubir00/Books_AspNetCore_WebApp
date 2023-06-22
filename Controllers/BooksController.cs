@@ -1,4 +1,5 @@
-﻿using BookWebApp.Helpers;
+﻿using AspNetCore;
+using BookWebApp.Helpers;
 using BookWebApp.Models;
 using BookWebApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -50,58 +51,47 @@ namespace BookWebApp.Controllers
             
             return View(book);
         }
-       
-        
-                   
-        //[HttpPost]
-        //public async Task<IActionResult> Details()
-        //{
-        //    Book book = new Book();
-        //    using (var response = await _client.GetAsync(_client.BaseAddress+"/Books/get-book-by-id/"))
-        //    {
-        //        if (response.StatusCode == System.Net.HttpStatusCode.OK)
-        //        {
-        //            string apiResponse = await response.Content.ReadAsStringAsync();
-        //            book = JsonConvert.DeserializeObject<Book>(apiResponse);
-        //        }
-        //        else
-        //        {
-        //            ViewBag.StatusCode = response.StatusCode;
-        //        }
-        //    }
-           
-        //    return View(book);
-        //}
 
-        //[HttpGet]
-        //public IActionResult AddBook() => View();
-        
 
-        //[HttpPost]
-        //public async Task<IActionResult> AddBook(BookVM bookVM)
-        //{
-        //    try
-        //    {
-        //        List<int> rr = new List<int>();
-        //        bookVM.AuthorsIds = rr;
-        //        string data = JsonConvert.SerializeObject(bookVM);
-        //        StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+        [HttpGet]
+        public IActionResult Create() => View();
 
-        //        HttpResponseMessage response = _client.PostAsync(_client.BaseAddress + "Books/Add-books-with-AuthorsandPublisher", content).Result;
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            TempData["SuccessedMessage"] = "Create successed";
-        //            return RedirectToAction(nameof(Index));
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        TempData["ErrorMessage"] = "Create failed";
-        //        return View(bookVM);
-        //    }
-           
-        //    return View(bookVM);
-        //}
+
+        [HttpPost]
+        public async Task<IActionResult> Create(BookVM bookVM)
+        {
+            try
+            {
+                BookVM _book = new BookVM
+                {
+                    Title = bookVM.Title,
+                    Description = bookVM.Description,
+                    IsRead = bookVM.IsRead,
+                    DateRead = bookVM.IsRead ? bookVM.DateRead.Value : null,
+                    Rate = bookVM.IsRead ? bookVM.Rate.Value : null,
+                    Genre = bookVM.Genre,
+                    CoverUrl = bookVM.CoverUrl,
+                    publisherId = bookVM.publisherId,
+                    AuthorsIds = bookVM.AuthorsIds.ToList()
+                };
+                string data = JsonConvert.SerializeObject(_book);
+                StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response =await _client.PostAsync(_client.BaseAddress + "Books/Add-books-with-AuthorsandPublisher", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    TempData["SuccessedMessage"] = "Create successed";
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (Exception)
+            {
+                TempData["ErrorMessage"] = "Create failed";
+                return View(bookVM);
+            }
+
+            return View(bookVM);
+        }
 
     }
 }
