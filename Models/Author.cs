@@ -1,4 +1,6 @@
-﻿namespace BookWebApp.Models
+﻿using System.Text.Json.Serialization;
+
+namespace BookWebApp.Models
 {
     public class Author
     {
@@ -6,7 +8,7 @@
         public string FullName { get; set; }
 
         // navigation properties
-
+        [JsonIgnore]
         public List<Book_author> Book_Authors { get; set; }
     }
 }

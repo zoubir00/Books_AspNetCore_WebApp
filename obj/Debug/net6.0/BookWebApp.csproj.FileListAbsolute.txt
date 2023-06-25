@@ -1,3 +1,11 @@
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.csproj.AssemblyReference.cache
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.AssemblyInfoInputs.cache
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.AssemblyInfo.cs
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.csproj.CoreCompileInputs.cache
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.RazorAssemblyInfo.cache
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.RazorAssemblyInfo.cs
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\appsettings.json
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\BookWebApp.staticwebassets.runtime.json
@@ -199,14 +207,6 @@ C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\runtim
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.csproj.AssemblyReference.cache
-C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.AssemblyInfoInputs.cache
-C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.AssemblyInfo.cs
-C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.csproj.CoreCompileInputs.cache
-C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.RazorAssemblyInfo.cache
-C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.RazorAssemblyInfo.cs
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\staticwebassets\msbuild.BookWebApp.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\staticwebassets\msbuild.build.BookWebApp.props
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BookWebApp.props
