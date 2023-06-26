@@ -117,6 +117,31 @@ namespace BookWebApp.Controllers
 
             return View(book);
         }
+        [HttpPost]
+        public IActionResult Edit(int id,BookVM book)
+        {
+            try
+            {
+                
+                string data = JsonConvert.SerializeObject(book);
+                StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response =  _client.PutAsync(_client.BaseAddress + "/Books/edit-book-/"+id, content).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    TempData["SuccessedMessage"] = "Create successed";
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (Exception)
+            {
+                TempData["ErrorMessage"] = "Create failed";
+                return View(book);
+            }
+
+            return View(book);
+        }
 
 
         //Get : Delete

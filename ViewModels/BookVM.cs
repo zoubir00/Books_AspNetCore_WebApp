@@ -13,7 +13,7 @@ namespace BookWebApp.ViewModels
         public string Genre { get; set; }
         public string CoverUrl { get; set; }
         public int publisherId { get; set; }
-        public List<int> authorsIds { get; set; }
+        public List<int>? authorsIds { get; set; }
 
     }
     public class BookWithAuthorsVM
@@ -27,7 +27,7 @@ namespace BookWebApp.ViewModels
         public int? Rate { get; set; }
         public string Genre { get; set; }
         public string CoverUrl { get; set; }
-        public string publisherName { get; set; }
-        public List<string> AuthorsName { get; set; }
+        public string? publisherName { get; set; }
+        public List<string>? AuthorsName { get; set; }
     }
 }
