@@ -97,6 +97,29 @@ namespace BookWebApp.Controllers
 
             return View(bookVM);
         }
+
+        // Edit:
+
+        public IActionResult Edit(int id)
+        {
+            BookVM book = new BookVM();
+            HttpResponseMessage response = _client.GetAsync(_client.BaseAddress + "/Books/get-book-by-id/" + id).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                string data = response.Content.ReadAsStringAsync().Result;
+                book = JsonConvert.DeserializeObject<BookVM>(data);
+            }
+            else
+            {
+                ViewBag.StatusCode = response.StatusCode;
+            }
+
+            return View(book);
+        }
+
+
+        //Get : Delete
         public async Task<IActionResult> Delete(int id)
         {
             Book book = new Book();
@@ -115,6 +138,8 @@ namespace BookWebApp.Controllers
             return View(book);
            
         }
+
+        //Post : delete
         [HttpPost,ActionName("Delete")]
         public async Task<IActionResult> ConfirmDelete(int id)
         {
