@@ -4,7 +4,10 @@ using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAuthentication();
+//builder.Services.AddIdentity<ApplicationUser,IdentityRole>().AddDefaultTokenProviders();
+//builder.Services.AddAuthentication();
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

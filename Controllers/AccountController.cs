@@ -11,31 +11,36 @@ namespace BookWebApp.Controllers
 {
     public class AccountController : Controller
     {
-        //private readonly UserManager<IdentityUser> _userManager;
-        //private readonly SignInManager<IdentityUser> _signInManager;
+        //private readonly UserManager<ApplicationUser> _userManager;
+        //private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly HttpClient _client;
         Uri uri = new Uri(Setting.baseAddress);
 
 
-        public AccountController(/*UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager*/)
+        public AccountController(/*UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager*/)
         {
             _client = new HttpClient();
             _client.BaseAddress = uri;
             //_userManager = userManager;
             //_signInManager = signInManager;
         }
+
+
+        // registration
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
+
+        // registration
         [HttpPost]
         public async Task<ActionResult<UserManagerResponse>> Register(RegisterVM model)
         {
             try
             {
-                
+
                 string data = JsonConvert.SerializeObject(model);
                 StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
 
@@ -45,21 +50,15 @@ namespace BookWebApp.Controllers
                 {
                     var resposeContent = await response.Content.ReadAsStringAsync();
                     var registerResponse = JsonConvert.DeserializeObject<UserManagerResponse>(resposeContent);
-                    //var appuser = new IdentityUser
-                    //{
-                    //    Email=model.Email
-                        
-                        
-                    //};
-                    //if (registerResponse.IsSuccess)
-                    //{
-                    //    await _signInManager.CheckPasswordSignInAsync(appuser, model.Password, false);
-                    //    
-                    //}
-                       
-                    ViewData["success"] = "sign in is done successfully";        
-                    return RedirectToAction("Index", "Books");
-                    
+                    if (registerResponse.IsSuccess)
+                    {
+                        //await _signInManager.SignInAsync(registerResponse.User, false);
+                        ViewData["success"] = "sign in is done successfully";
+                            return RedirectToAction("Index", "Books");
+                    }
+
+                   
+
                 }
             }
             catch (Exception)
@@ -74,5 +73,47 @@ namespace BookWebApp.Controllers
         {
             return View();
         }
+
+        // login
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<UserManagerResponse>> Login(LoginVM model)
+        {
+            try
+            {
+
+                string data = JsonConvert.SerializeObject(model);
+                StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await _client.PostAsync(_client.BaseAddress + "/Accounts/Login", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var resposeContent = await response.Content.ReadAsStringAsync();
+                    var registerResponse = JsonConvert.DeserializeObject<UserManagerResponse>(resposeContent);
+                    if (registerResponse.IsSuccess)
+                    {
+                        //await _userManager.CheckPasswordAsync(registerResponse.User, model.Password);
+                        //await _signInManager.SignInAsync(registerResponse.User, false);
+                        ViewData["success"] = "sign in is done successfully";
+                         return RedirectToAction("Index", "Books");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                TempData["ErrorMessage"] = "Create failed";
+                return View(model);
+            }
+
+            return View(model);
+        }
+
     }
+
+
 }

@@ -223,3 +223,13 @@ C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\refint
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.pdb
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\BookWebApp.genruntimeconfig.cache
 C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\obj\Debug\net6.0\ref\BookWebApp.dll
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\HP\OneDrive\Bureau\Internship\Webapp\BookWebApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
