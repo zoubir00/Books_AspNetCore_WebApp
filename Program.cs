@@ -1,12 +1,12 @@
+using BookWebApp.Models;
 using BookWebApp.Services;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddAuthentication();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-
-//builder.Services.AddTransient<BookService>();
 
 var app = builder.Build();
 
@@ -22,7 +22,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

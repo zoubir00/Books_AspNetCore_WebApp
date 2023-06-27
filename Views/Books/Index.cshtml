@@ -3,7 +3,12 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+@if (ViewData["success"] != null)
+{
+    <div class="col-md-12 alert alert-success">
+        <span>Hello! <b>- @ViewData["success"] </b></span>
+    </div>
+}
 <h1>Index</h1>
 
 <p>
