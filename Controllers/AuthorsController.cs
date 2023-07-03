@@ -51,7 +51,7 @@ namespace BookWebApp.Controllers
         public IActionResult CreateAuthor()=> View();
 
         [HttpPost]
-        public async Task<IActionResult> CreateAuthor(AuthorsVM author)
+        public async Task<IActionResult> CreateAuthor(AuthorVM author)
         {
             string data = JsonConvert.SerializeObject(author);
             StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
@@ -62,5 +62,35 @@ namespace BookWebApp.Controllers
             }   
             return View(author);
         }
+
+        // edit author action
+        public IActionResult UpdateAuthor(int Id)
+        {
+            AuthorVM author = new AuthorVM();
+            HttpResponseMessage response = _client.GetAsync(_client.BaseAddress + "/Authors/AuthorById/" + Id).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string data = response.Content.ReadAsStringAsync().Result;
+                author = JsonConvert.DeserializeObject<AuthorVM>(data);
+            }
+            return View(author);
+        }
+        [HttpPost]
+        public IActionResult UpdateAuthor(int id,AuthorVM author)
+        {
+
+            string data = JsonConvert.SerializeObject(author);
+            StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = _client.PutAsync(_client.BaseAddress + "/Authors/Edit/"+ id, content).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                
+                return RedirectToAction(nameof(Index));
+            }
+            return View(author);
+        }
+
     }
 }

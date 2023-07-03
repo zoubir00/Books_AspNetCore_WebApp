@@ -1,6 +1,6 @@
 ﻿namespace BookWebApp.ViewModels
 {
-    public class AuthorsVM
+    public class AuthorVM
     {
         public int Id { get; set; }
         public string FullName { get; set; }

@@ -37,7 +37,7 @@
                     <img src="@item.ImageURL" alt="@item.ImageURL" class="rounded-circle" style="max-width: 80px" />
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    <a asp-action="UpdateAuthor" asp-route-id="@item.Id">Edit</a>  |
                     <a asp-action="GetAuthorById" asp-route-id="@item.Id">Details</a> |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
